@@ -44,24 +44,64 @@
 }
 
 /** Swatches */
-.color-swatch {
+.main-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
 
-    img {
-    }
-
-    div.swatch-rgb {
-        width: 100%;
-        margin: 0;
-        padding: 0;
+    .color-swatch-container {
+        width: 20%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
+        margin-bottom: 20px;
+
+        img.swatch-img {
+            width: 60%;
+        }
+        
+        div.swatch-details {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-weight: 500;
+        }
     }
 }
 
 :host ::ng-deep .mat-grid-tile-content {
     flex-wrap: wrap;
     justify-content: center;
+}
+
+@media (max-width: 1200px) {
+    .main-content {
+        .color-swatch-container {
+            width: 33%;
+        }
+    }
+}
+
+
+@media (max-width: 700px) {
+    .user-inputs {
+        .input-container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .main-content {
+        .color-swatch-container {
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .main-content {
+        .color-swatch-container {
+            width: 510%;
+        }
+    }
 }

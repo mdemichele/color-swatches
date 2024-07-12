@@ -32,14 +32,12 @@
   </div>
 
   <div class="main-content">
-    <mat-grid-list cols="12" rowHeight="1:1">
-      @for (color of colors; track color) {
-        <mat-grid-tile class="color-swatch">
-          <img src="{{ color.image }}" alt="color"/>
-          <div class="swatch-rgb">{{ color.rgb }}</div>
-        </mat-grid-tile>
-      }
-    </mat-grid-list>
+    @for (color of colors; track color) {
+      <div class="color-swatch-container">
+        <img class="swatch-img" src="{{ color.image }}" alt="color"/>
+        <div class="swatch-details">{{color.name}}: {{ color.rgb }}</div>
+      </div>
+    }
   </div>
 </div>
 
