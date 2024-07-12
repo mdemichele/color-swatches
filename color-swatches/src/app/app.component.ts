@@ -7,6 +7,8 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +20,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule,
+    CommonModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -43,7 +47,7 @@ export class AppComponent {
     this.colors = [];
     this.colorNames = new Set();
 
-    for (let i = 0; i < 360; i++) {
+    for (let i = 0; i <= 360; i++) {
       this.hue = i;
 
       this.http.get(`https://www.thecolorapi.com/id?hsl=(${this.hue},${this.saturation}%,${this.lightness}%)`)

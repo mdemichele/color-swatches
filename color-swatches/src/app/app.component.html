@@ -1,20 +1,25 @@
 <div class="color-swatch-component">
+  <!-- Header -->
   <div class="header">
     <h3>Color Swatch</h3>
   </div>
 
+  <!-- User Inputs Section -->
   <div class="user-inputs">
-      <div class="input-container">
-        <div class="label-row">
-          <p class="label">Saturation</p>
-          <p class="label">{{saturation}}</p>
-        </div>
-  
-        <mat-slider [discrete]="true">
-          <input matSliderThumb [(ngModel)]="saturation">
-        </mat-slider>
-      </div>
 
+    <!-- Saturation -->
+    <div class="input-container">
+      <div class="label-row">
+        <p class="label">Saturation</p>
+        <p class="label">{{saturation}}</p>
+      </div>
+  
+      <mat-slider [discrete]="true">
+        <input matSliderThumb [(ngModel)]="saturation">
+      </mat-slider>
+    </div>
+
+    <!-- Lightness -->
     <div class="input-container">
       <div class="label-row">
         <p class="label">Lightness</p>
@@ -26,11 +31,13 @@
       </mat-slider>
     </div>
 
+    <!-- Search button -->
     <div class="search-container">
       <button (click)="getColors()" mat-flat-button>Get Colors!</button>
     </div>
   </div>
 
+  <!-- Color Swatches -->
   <div class="main-content">
     @for (color of colors; track color) {
       <div class="color-swatch-container">
