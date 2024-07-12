@@ -41,18 +41,17 @@ export class AppComponent {
 
   public getColors(): void {
     this.colors = [];
+    this.colorNames = new Set();
 
     for (let i = 0; i < 360; i++) {
       this.hue = i;
 
       this.http.get(`https://www.thecolorapi.com/id?hsl=(${this.hue},${this.saturation}%,${this.lightness}%)`)
-      .subscribe((result: any) => {
-        
-        if (!this.colorNames.has(result.name.value)) {
-          this.colorNames.add(result.name.value);
-          this.colors.push({ image: result.image.named, rgb: result.rgb.value });
-        }
-        
+        .subscribe((result: any) => {
+          if (!this.colorNames.has(result.name.value)) {
+            this.colorNames.add(result.name.value);
+            this.colors.push({ image: result.image.bare, rgb: result.rgb.value, name: result.name.value });
+          }
       });
     }
   }
