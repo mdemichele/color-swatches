@@ -1,0 +1,67 @@
+/* Header */
+.header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* User Inputs */
+.user-inputs {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 20%;
+    flex-wrap: wrap;
+}
+
+.input-container {
+    background: #f2f2f2;
+    padding: 20px 40px;
+    border-radius: 10px;
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .label-row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    mat-slider {
+        width: 100%;
+    }
+}
+
+.search-container {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding-top: 50px;
+}
+
+/** Swatches */
+.color-swatch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img {
+    }
+
+    div.swatch-rgb {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+:host ::ng-deep .mat-grid-tile-content {
+    flex-wrap: wrap;
+    justify-content: center;
+}

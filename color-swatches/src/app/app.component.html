@@ -1,0 +1,46 @@
+<div class="color-swatch-component">
+  <div class="header">
+    <h3>Color Swatch</h3>
+  </div>
+
+  <div class="user-inputs">
+      <div class="input-container">
+        <div class="label-row">
+          <p class="label">Saturation</p>
+          <p class="label">{{saturation}}</p>
+        </div>
+  
+        <mat-slider [discrete]="true">
+          <input matSliderThumb [(ngModel)]="saturation">
+        </mat-slider>
+      </div>
+
+    <div class="input-container">
+      <div class="label-row">
+        <p class="label">Lightness</p>
+        <p class="label">{{lightness}}</p>
+      </div>
+
+      <mat-slider [discrete]="true">
+        <input matSliderThumb [(ngModel)]="lightness">
+      </mat-slider>
+    </div>
+
+    <div class="search-container">
+      <button (click)="getColors()" mat-flat-button>Get Colors!</button>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <mat-grid-list cols="12" rowHeight="1:1">
+      @for (color of colors; track color) {
+        <mat-grid-tile class="color-swatch">
+          <img src="{{ color.image }}" alt="color"/>
+          <div class="swatch-rgb">{{ color.rgb }}</div>
+        </mat-grid-tile>
+      }
+    </mat-grid-list>
+  </div>
+</div>
+
+<router-outlet />
